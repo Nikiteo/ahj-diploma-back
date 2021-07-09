@@ -67,7 +67,7 @@ let initMsg = false;
 router.get('/initmsg', async (ctx, next) => {
   if (!initMsg) {
     initMsg = true;
-    const resp = await fetch('http://localhost:7070/msg.json');
+    const resp = await fetch('http://localhost:8080/msg.json');
     const body = await resp.text();
     const arrInitMsg = JSON.parse(body);
     arrMessges.push(...arrInitMsg);
